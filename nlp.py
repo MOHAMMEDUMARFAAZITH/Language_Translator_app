@@ -1,4 +1,4 @@
-import docx
+from docx import Document 
 from googletrans import Translator
 import streamlit as st
 
@@ -10,7 +10,7 @@ def main():
     
     
     if docx_file:
-        doc = docx.Document(docx_file)
+        doc = Document(docx_file)
         extracted_text = ""
         for paragraph in doc.paragraphs:
             extracted_text += paragraph.text + "\n"
